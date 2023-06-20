@@ -1,95 +1,14 @@
-class Animal:
-    def __init__(self, name, zoo_name="Hayaton"):
-        self._name = name
-        self._hunger = 0
-        self._zoo_name = zoo_name
-
-    def get_name(self):
-        return self._name
-
-    def is_hungry(self):
-        if self._hunger > 0:
-            return True
-        else:
-            return False
-
-    def feed(self):
-        self._hunger -= 1
-
-    def talk(self):
-        pass
-
-
-class Dog(Animal):
-
-    def __init__(self, name, hunger):
-        super().__init__(name, hunger)
-
-    def talk(self):
-        print("woof woof")
-
-    def fetch_stick(self):
-        print("There you go, sir!")
-
-
-class Cat(Animal):
-
-    def __init__(self, name, hunger):
-        Animal.__init__(self, name)
-        self._hunger = hunger
-
-    def talk(self):
-        print("meow")
-
-    def chase_laser(self):
-        print("Meeeeow")
-
-
-class Skunk(Animal):
-
-    def __init__(self, name, hunger, stink_count=6):
-        Animal.__init__(self, name)
-        self._hunger = hunger
-        self._stink_count = stink_count
-
-    def talk(self):
-        print("tssss")
-
-    def stink(self):
-        print("Dear lord!")
-
-
-class Unicorn(Animal):
-
-    def __init__(self, name, hunger):
-        Animal.__init__(self, name)
-        self._hunger = hunger
-
-    def talk(self):
-        print("Good day, darling")
-
-    def sing(self):
-        print("I’m not your toy...")
-
-
-class Dragon(Animal):
-
-    def __init__(self, name, hunger, color="green"):
-        Animal.__init__(self, name)
-        self._hunger = hunger
-        self._color = color
-
-    def talk(self):
-        print("Raaaawr")
-
-    def breath_fire(self):
-        print("$@#$#@$")
-
-
-zoo_lst = []
+from Animals import Animal
+from Dogs import Dog
+from Cats import Cat
+from Skunks import Skunk
+from Unicorns import Unicorn
+from Dragons import Dragon
 
 
 def main():
+    zoo_lst = []
+
     brownie = Dog("Brownie", 10)
     zelda = Cat("Zelda", 3)
     stinky = Skunk("Stinky", 0)
